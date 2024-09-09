@@ -1,7 +1,11 @@
 @extends('layout')
 
 @section('page-content')
-    <h1>Hello, world!</h1>
+    <h1>All books list</h1>
+
+    <p class="text-end">
+        <a class="btn btn-primary" href="{{route('books.create') }}">New Book</a>
+    </p>
     <table class="table table-striped table-bordered">
         <tr>
             <th>Id</th>
