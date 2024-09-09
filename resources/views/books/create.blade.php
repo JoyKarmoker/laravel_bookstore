@@ -5,7 +5,7 @@
 <legend>New Book</legend>
 
 <form method="post" action="{{route('books.store')}}">
-    {{@csrf_field()}}
+    @csrf
 
   <div class="mb-2">
     <label for="title" class="form-label">Title</label>

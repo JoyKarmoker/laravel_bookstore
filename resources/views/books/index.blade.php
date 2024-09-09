@@ -19,7 +19,14 @@
                 <td>{{$book->id}}</td>
                 <td>{{$book->title}}</td>
                 <td>{{$book->author}}</td>
-                <td><a href="{{route('books.show', $book->id)}}">Details</a></td>
+                <td>
+                    <a href="{{route('books.show', $book->id)}}">Details</a> |
+                    <form method=post action="{{route('books.destroy', $book->id)}}" onsubmit="return confirm('Are you sre, you want to delete?')">
+                        @csrf
+                        @method('DELETE')
+                        <input class="btn btn-link" type="submit" value="delete">
+                    </form>
+                </td>
             </tr>
             
         @endforeach
